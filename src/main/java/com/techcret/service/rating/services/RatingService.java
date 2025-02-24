@@ -12,7 +12,11 @@ public interface RatingService {
 
     List<Rating> getAllRatings();
 
-    Rating getRating(String ratingId);
+    Rating getRating(String id);
+
+    List<Rating> getRatingByUserId(String id);
+
+    List<Rating> getRatingByHotelId(String id);
 
     //TODO:Delete
 

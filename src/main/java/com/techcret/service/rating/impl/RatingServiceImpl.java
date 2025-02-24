@@ -43,4 +43,14 @@ public class RatingServiceImpl implements RatingService {
     public Rating getRating(String hotelId) {
         return ratingRepository.findById(hotelId).orElseThrow(() -> new ResourceNotFoundException("Rating not found on server with id :- " + hotelId));
     }
+
+    @Override
+    public List<Rating> getRatingByUserId(String id) {
+        return ratingRepository.findByUserId(id);
+    }
+
+    @Override
+    public List<Rating> getRatingByHotelId(String id) {
+        return ratingRepository.findByHotelId(id);
+    }
 }

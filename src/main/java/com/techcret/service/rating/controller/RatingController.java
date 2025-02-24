@@ -37,4 +37,13 @@ public class RatingController {
         return ResponseEntity.ok(ratingService.getAllRatings());
     }
 
+    @GetMapping("/hotels/{userId}")
+    public ResponseEntity<List<Rating >> getRatingsByUserId(@PathVariable String userId) {
+        return ResponseEntity.ok(ratingService.getRatingByUserId(userId));
+    }
+
+    @GetMapping("/hotels/{hotelId}")
+    public ResponseEntity<List<Rating >> getRatingsByHotelId(@PathVariable String hotelId) {
+        return ResponseEntity.ok(ratingService.getRatingByHotelId(hotelId));
+    }
 }
